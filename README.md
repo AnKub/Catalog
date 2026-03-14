@@ -1,13 +1,6 @@
-🚀 Catalog — React + TypeScript + Vite
-Welcome to the most stylish product catalog in the universe! Powered by React, TypeScript, Vite and a sprinkle of SCSS magic.
-If you love clean code and beautiful interfaces, you’re in the right place.
-
-Features (aka “Why you’ll love it”):
-🛒 Product cards with discounts, ratings, and volumes
-🔍 Search for your favorite item
-🔄 Sort by popularity, price, or just because you can
-📦 Pagination for those who love clicking numbers
-🧑‍💻 Responsive, adaptive, and OOP-friendly (even your grandma’s phone will love it)
-🏷️ Header with logo, footer with copyright, and payment methods
-🥷 No boring links, just pure catalog action
-Enjoy, test, and may your code be as stylish as your UI!
+🛒 Catalog — React + TS
+I built this catalog as a focused example of functional and well-structured frontend development. Using React and TypeScript ensured a stable architecture, where strong typing prevents errors before they even happen. For the visuals, I used SCSS to keep the style modules clean and maintainable.
+This is a comprehensive product page where every feature is built with the user in mind. I’ve implemented flexible sorting (by price or popularity), real-time search, and smooth pagination for larger datasets. The product cards are designed to handle various states — from discounts and ratings to looking great on any screen size.
+I hope this project reflects my overall approach: from clean component logic to a focus on business requirements. If you enjoy the catalog — awesome; if not — at least this README didn’t bore you. 😏
+Contact
+Feel free to reach out via Telegram: @AnKubLXXXVIII
