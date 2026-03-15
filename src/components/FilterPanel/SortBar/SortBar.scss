@@ -1,18 +1,35 @@
+@use '../../../styles/variables' as *;
+
 .sort-bar {
   min-width: 180px;
 }
 
 .sort-bar__select {
   width: 100%;
-  padding: 10px 16px;
+  padding: 10px;
   border-radius: 8px;
   border: 1px solid $border-color;
   font-size: 1rem;
-  background: #f9f9f9;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  color: #fff;
   transition: border-color 0.2s;
 }
 
 .sort-bar__select:focus {
-  border-color: #1976d2;
+  border-color: $primary-color;
   outline: none;
+  background: rgba(60, 60, 60, 0.45);
 }
+
+ .sort-bar__select:hover {
+   background: rgba(60, 60, 60, 0.35);
+   border-color: #000000;
+ }
+
+ @media (max-width: $breakpoint-mobile) {
+   .sort-bar__select {
+     font-size: 0.9rem;
+     padding: 8px 10px;
+   }
+ }

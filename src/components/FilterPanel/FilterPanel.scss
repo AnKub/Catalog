@@ -1,16 +1,21 @@
-.filter-panel {
-  display: flex;
-  gap: 24px;
-  align-items: center;
-  justify-content: space-between;
-  margin: 32px 0 0 0;
-  flex-wrap: wrap;
-}
+@use '../../styles/variables' as *;
 
-@media (max-width: 600px) {
+ .filter-panel {
+   display: flex;
+   gap: 24px;
+   align-items: center;
+   justify-content: flex-end;
+   width: 40%;
+   margin: 32px 0 0 auto;
+   flex-wrap: wrap;
+ }
+
+@media (max-width: $breakpoint-mobile) {
   .filter-panel {
+    width: 100%;
     flex-direction: column;
     gap: 12px;
     margin: 16px 0 0 0;
+    align-items: flex-end;
   }
 }

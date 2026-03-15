@@ -11,9 +11,9 @@ interface FilterPanelProps {
 }
 
 const FilterPanel: React.FC<FilterPanelProps> = ({ search, onSearch, sort, onSort }) => (
-  <div className="filter-panel">
-    <SearchBar value={search} onChange={onSearch} />
-    <SortBar value={sort} onChange={onSort} />
+  <div className="filter-panel"> 
+  <SortBar value={sort} onChange={onSort} />
+    <SearchBar value={search} onChange={onSearch} />   
   </div>
 );
 

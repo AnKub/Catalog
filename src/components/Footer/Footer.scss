@@ -1,11 +1,13 @@
+@use '../../styles/variables' as *;
+
 .footer {
   width: 100%;
-  background: #fff;
+  background: $background-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid $border-color;
   font-size: 0.95rem;
 }
 
@@ -22,17 +24,17 @@
 .footer__logo {
   width: 32px;
   height: 32px;
-  background: #f2f2f2;
+  background: $background-color;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  color: #888;
+  color: $text-color;
 }
 
 .footer__copyright {
-  color: #aaa;
+  color: $text-color;
   font-size: 0.8rem;
   margin-left: 16px;
 }
