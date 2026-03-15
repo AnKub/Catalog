@@ -5,6 +5,8 @@ import Pagination from './components/Pagination/Pagination';
 import FilterPanel from './components/FilterPanel/FilterPanel';
 import type { Product } from './services/productApi';
 import { fetchProducts} from './services/productApi';
+import { useDebounce } from './hooks/useDebounce';
+
 
 function App() {
     const [page, setPage] = useState(1);
@@ -14,6 +16,7 @@ function App() {
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('popularity');
+  const debouncedSearch = useDebounce(search, 300);
 
   useEffect(() => {
     fetchProducts()
@@ -29,7 +32,7 @@ function App() {
 
  
   const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(search.toLowerCase())
+    product.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
   const sortedProducts = [...filteredProducts].sort((a, b) => {
