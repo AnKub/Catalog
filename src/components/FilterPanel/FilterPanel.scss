@@ -11,12 +11,19 @@
    flex-wrap: wrap;
  }
 
+@media (max-width: 1040px) {
+  .filter-panel {
+    gap: 12px;
+  }
+}
+
+
 @media (max-width: $breakpoint-mobile) {
   .filter-panel {
     width: 100%;
     flex-direction: column;
-    gap: 12px;
-    margin: 16px 0 0 0;
+    gap: 10px;
+    margin: 10px 0 0 0;
     align-items: flex-end;
   }
 }

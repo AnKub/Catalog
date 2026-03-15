@@ -18,6 +18,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const [showDescription, setShowDescription] = useState(false);
   const [selectedVolume, setSelectedVolume] = useState(selected_volume_id);
+    const [showAdded, setShowAdded] = useState(false);
+
+    const handleAddToCart = () => {
+      setShowAdded(true);
+      setTimeout(() => setShowAdded(false), 1800);
+    };
 
   return (
       <div className="product-card" role="listitem" tabIndex={0} aria-label={`Product card: ${name}`}> 
@@ -27,7 +33,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="product-card__price-row">
           <span className="product-card__old-price">{old_price} {currency}</span>
           <span className="product-card__price">{price} {currency}</span>
-          <span className="product-card__discount">-{discount_percent}%</span>
+          <span className="product-card__discount">
+            <img src="/src/assets/icons/discount-tag.svg" alt="Знижка" width={32} height={24} style={{ verticalAlign: 'middle' }} />
+          </span>
         </div>
         <div className="product-card__desc">
           <span className={showDescription ? 'product-card__desc-full' : 'product-card__desc-short'}>
@@ -67,8 +75,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
               ))}
             </select>
           )}
-          <button className="product-card__cart">В корзину</button>
+            <button className="product-card__cart" onClick={handleAddToCart}>В корзину</button>
         </div>
+          {showAdded && (
+            <div className="product-card__added">Додано до корзини!</div>
+          )}
       </div>
   );
 };
