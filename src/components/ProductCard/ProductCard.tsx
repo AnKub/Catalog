@@ -28,7 +28,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
       <div className="product-card" role="listitem" tabIndex={0} aria-label={`Product card: ${name}`}> 
         <div className="product-card__image">
-          <img src={image} alt={name} />
+        <img
+              src={image ? image : '/public/product.png'}
+              alt={name}
+            />
         </div>
         <div className="product-card__price-row">
           <span className="product-card__old-price">{old_price} {currency}</span>
