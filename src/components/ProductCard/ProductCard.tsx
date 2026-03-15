@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const [selectedVolume, setSelectedVolume] = useState(selected_volume_id);
 
   return (
-    <div className="product-card">
+    <div className="product-card" role="listitem" tabIndex={0} aria-label={`Product card: ${name}`}> 
       <div className="product-card__image">
         <img src={image} alt={name} />
       </div>

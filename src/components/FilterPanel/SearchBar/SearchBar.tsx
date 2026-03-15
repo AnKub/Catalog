@@ -7,13 +7,15 @@ interface SearchBarProps {
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ value, onChange }) => (
-  <div className="search-bar">
+  <div className="search-bar" role="search">
     <input
       type="text"
       placeholder="Search products..."
       value={value}
       onChange={e => onChange(e.target.value)}
       className="search-bar__input"
+      aria-label="Search products"
+      tabIndex={0}
     />
   </div>
 );

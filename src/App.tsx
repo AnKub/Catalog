@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import Layout from './layout/Layout';
 import ProductGrid from './components/ProductGrid';
+import Pagination from './components/Pagination/Pagination';
 import FilterPanel from './components/FilterPanel/FilterPanel';
 import type { Product } from './services/productApi';
 import { fetchProducts} from './services/productApi';
 
 function App() {
+    const [page, setPage] = useState(1);
+    const pageSize = 12; 
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -37,6 +40,14 @@ function App() {
     return 0;
   });
 
+  const totalPages = Math.ceil(sortedProducts.length / pageSize);
+  const paginatedProducts = sortedProducts.slice((page - 1) * pageSize, page * pageSize);
+
+// тут скидання сторінки , типу якщо корситувач змінив фільтр
+  useEffect(() => {
+    setPage(1);
+  }, [search, sort]);
+
   return (
     <Layout>
       {loading && <div>Loading...</div>}
@@ -49,7 +60,14 @@ function App() {
             sort={sort}
             onSort={setSort}
           />
-          <ProductGrid products={sortedProducts} />
+          <ProductGrid products={paginatedProducts} />
+          {totalPages > 1 && (
+            <Pagination
+              currentPage={page}
+              totalPages={totalPages}
+              onPageChange={setPage}
+            />
+          )}
         </>
       )}
     </Layout>
