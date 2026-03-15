@@ -1,20 +1,27 @@
+
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  justify-items: center;
-  margin: 32px 0;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 32px;
+justify-items: center;
+margin: 32px 0;
+padding-left: 32px;
+padding-right: 32px;
 }
 
 @media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
 @media (max-width: 900px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 
@@ -22,5 +29,7 @@
   .product-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }

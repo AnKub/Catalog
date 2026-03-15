@@ -1,8 +1,14 @@
 @use '../../styles/variables' as *;
 
 .product-card {
-  width: 347px;
-  height: 657px;
+  max-width: 347px;
+  width: 100%;
+  min-height: 420px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   background: $background-color ;
   border: 1px solid $border-color;
   border-radius: 16px;
@@ -154,8 +160,10 @@
 .product-card__actions {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 16px;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: auto;
+  align-items: flex-end;
 }
 
 .product-card__volumes {
@@ -167,7 +175,7 @@
 }
 
 .product-card__cart {
-  padding: 6px 18px;
+  padding: 12px 0;
   border-radius: 8px;
   background: #1976d2;
   color: #fff;
@@ -175,15 +183,28 @@
   font-size: 1rem;
   cursor: pointer;
   font-weight: 600;
+  width: 100%;
+  margin-top: 0;
 }
 
 @media (max-width: 600px) {
   .product-card {
     width: 100%;
-    height: auto;
+    min-height: 320px;
+    max-width: 100%;
     padding: 12px 4px;
+    box-sizing: border-box;
   }
   .product-card__image {
     height: 120px;
+  }
+  .product-card__actions {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .product-card__cart {
+    width: 100%;
+    padding: 12px 0;
   }
 }
