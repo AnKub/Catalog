@@ -29,7 +29,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="product-card" role="listitem" tabIndex={0} aria-label={`Product card: ${name}`}> 
         <div className="product-card__image">
         <img
-              src={image ? image : '/public/product.png'}
+              src={image ? image : '/product-1.png'}
               alt={name}
             />
         </div>
